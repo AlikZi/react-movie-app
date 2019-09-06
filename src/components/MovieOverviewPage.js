@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/styles.scss';
 
 const MovieOverviewPage = ({ match }) => (
   <div>
