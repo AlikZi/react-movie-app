@@ -7,8 +7,6 @@
   "homepage": "http://alikzi.github.io/react-movie-app",
   "license": "MIT",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "webpack-dev-server",
     "build": "webpack",
     "serve": "live-server public/"

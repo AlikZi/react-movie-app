@@ -6,6 +6,7 @@ import MainPage from '../components/MainPage';
 import MovieOverviewPage from '../components/MovieOverviewPage';
 import NotFoundPage from "../components/NotFoundPage";
 
+// Create browser history for react router
 export const history = createBrowserHistory();
 
 const AppRouter = () => (
