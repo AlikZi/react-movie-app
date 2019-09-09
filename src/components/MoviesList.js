@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import MovieCard from './MovieCard';
 
 const MoviesList = (props) => (
-    <div>
-        <h1>Popular Movies</h1>
+    <div className="movie-list">
         {props.movies.map(movie => (
             <MovieCard key={movie.id} movie={movie}/>))}
     </div>

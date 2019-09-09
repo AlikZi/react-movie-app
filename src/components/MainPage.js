@@ -2,8 +2,10 @@ import React from 'react';
 import MoviesList from './MoviesList'
 
 const MainPage = () => (
-  <div>
-    <MoviesList />
+  <div className="container">
+    <div className="main">
+      <MoviesList />
+    </div>
   </div>
 );
 

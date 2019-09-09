@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <div className="header">
-    <h1>The Movie DB</h1>
+    <div className="logo-box container">
+    <Link to="/"><img className="logo-image" alt="The Movie DB" src="/images/tmdb.svg" /></Link>
+    </div>
   </div>
 );
 

@@ -1,4 +1,44 @@
+// Colors
+$primary-color: #01d277;
+$secondary-color: #081c24;
+$color-grey-light:  #f9f7f6;
+$color-grey-dark: #333;
+//Fonts
+
+
+// RESPONSIVE BREAK POINTS
+$bp-lg: 62.25em; // 1000px
+$bp-md: 50em; //800px
+$bp-sm: 37.5em; //600px
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //10px/16px=62.5% --> 1rem = 10px;
+}
+
 body {
-    color: #fff;
-    background-color: #121212;
+    //font-family: $font-primary;
+    color: $color-grey-dark;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @media only screen and (max-width: $bp-lg) {
+        margin: 0 5rem;
+    }
+
+    
+
 }

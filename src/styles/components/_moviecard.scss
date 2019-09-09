@@ -1,0 +1,11 @@
+.movie-card{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+
+    &-poster{
+        grid-column: 1/2;
+        max-width: 100%;
+    }
+
+    
+}
