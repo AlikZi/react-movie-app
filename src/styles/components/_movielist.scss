@@ -1,7 +1,11 @@
 .movie-list{
-    margin: 10rem 0;
+    margin: 5rem 0 10rem;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    grid-gap: 6rem;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-gap: 5rem;
+
+    @media only screen and (max-width: 28.125em) {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
 }

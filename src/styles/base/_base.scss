@@ -1,15 +1,8 @@
 // Colors
 $primary-color: #01d277;
 $secondary-color: #081c24;
-$color-grey-light:  #f9f7f6;
 $color-grey-dark: #333;
-//Fonts
 
-
-// RESPONSIVE BREAK POINTS
-$bp-lg: 62.25em; // 1000px
-$bp-md: 50em; //800px
-$bp-sm: 37.5em; //600px
 
 *,
 *::before,
@@ -25,8 +18,8 @@ html {
 }
 
 body {
-    //font-family: $font-primary;
-    color: $color-grey-dark;
+    font-family: "Open Sans", sans-serif;;
+    color: $secondary-color;
     font-weight: 300;
     line-height: 1.6;
 }
@@ -35,8 +28,8 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 
-    @media only screen and (max-width: $bp-lg) {
-        margin: 0 5rem;
+    @media only screen and (max-width: 66.25em) {
+        margin: 0 3rem;
     }
 
     
