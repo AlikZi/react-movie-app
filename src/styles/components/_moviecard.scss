@@ -1,7 +1,8 @@
 .moviecard{
     display: grid;
     grid-template-columns: 2fr 3fr;
-    border: 0.05rem solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 
     
