@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
-import YouTube from 'react-youtube';
 import { API_KEY, URL_IMAGE, URL_BACKDROP } from '../api_source';
+
 
 export default class MovieOverviewPage extends React.Component {
   constructor(props) {
@@ -18,7 +19,6 @@ export default class MovieOverviewPage extends React.Component {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
       .then( res => res.json())
       .then( (data) => {
-        console.log(data);
         this.setState({movie:data})})
       .catch(err => 
       console.log(err));
@@ -27,8 +27,6 @@ export default class MovieOverviewPage extends React.Component {
     fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`)
     .then(res => res.json())
     .then( data => {
-      console.log(data.results);
-      //const trailers = data.results.filter(video => video.type =="Trailer");
       this.setState({ videos: data.results.slice(0, 2)})
     })
   }
@@ -43,13 +41,23 @@ export default class MovieOverviewPage extends React.Component {
       vote_average,
       genres
           }= this.state.movie;
+    
+    // Format rate to have one decimal
     let rate;
     if (vote_average){
       rate = vote_average.toFixed(1);
     }
 
+    // Format release date
     const date = moment(release_date, 'YYYY-MM-DD').format('MMMM D, YYYY');
-    // Create
+
+    // Transform the  list of genres into string
+    let genres_names;
+    if(genres){
+      genres_names = genres.map(genre => genre.name).join(', ')
+    }
+
+    // Create divs that contain iframe with trailer and name below the iframe and save in "videos"
     const videos = this.state.videos.map(video =>{
       return (
       <div key={video.key} className="movie-videos__item">
@@ -61,14 +69,13 @@ export default class MovieOverviewPage extends React.Component {
       );
     });
 
-    let genres_names;
-    if(genres){
-      genres_names = genres.map(genre => genre.name).join(', ')
-    }
     return (
       <div>
+        <Link className="back-link" to={`/`}>
+          <img alt="Back Button" className="back-link__button" src="/images/left-arrow.svg"/>
+        </Link>
         <div className="backdrop">
-        <img className="backdrop__image" alt={title} src={`${URL_BACKDROP}${backdrop_path}`}/>
+          <img className="backdrop__image" alt={title} src={`${URL_BACKDROP}${backdrop_path}`}/>
         </div>
         <div className='overview'>
           <div className="container">
@@ -81,16 +88,15 @@ export default class MovieOverviewPage extends React.Component {
               </div>
               <p className="poster-title-box__rate">{rate}</p>
             </div>
-            {/*<div className="overview-trailer-box">*/}
-              <div className="overview-text">
+            
+            <div className="overview-text">
                 <h3>Overview</h3>
                 <p>{overview}</p>
-              </div>
-              <h3 className="videos-header">Trailers</h3>
-              <div className="movie-videos">
+            </div>
+            <h3 className="videos-header">Trailers</h3>
+            <div className="movie-videos">
                 {videos}
-              </div>
-          {/*</div>*/}
+            </div>
           </div>
         </div>
       </div>
