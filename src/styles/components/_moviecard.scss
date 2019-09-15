@@ -1,3 +1,4 @@
+// Style Moviecard
 .moviecard{
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -5,14 +6,14 @@
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 
-    
-
+    // Poster part
     &-poster{
         grid-column: 1/2;
         max-width: 100%;
         border-image-repeat: inherit;
     }
 
+    // Info part
     &-info {
         padding: 1.5rem 1.5rem 0;
         display: flex;
@@ -41,6 +42,7 @@
                     height: 3rem;
                 }
             }
+            
             &-text{
                 
                 &-title {

@@ -4,9 +4,15 @@ import { Link } from 'react-router-dom';
 import { URL_IMAGE } from '../api_source';
 
 const MovieCard = ({ movie }) => {
-    const {id, title, release_date, vote_average, overview, poster_path } = movie;
+    // destructure movie object
+    const { id, title, release_date, vote_average, overview, poster_path } = movie;
+
+    // Format release date and assign it to date
     const date = moment(release_date, 'YYYY-MM-DD').format('MMMM D, YYYY');
+
+    // Formate rate, add one decimal
     const rate = vote_average.toFixed(1);
+    
     return (
     <div className='moviecard'>
     <Link to={`/movie/${id}`}><img className='moviecard-poster' alt={title} src={`${URL_IMAGE}${poster_path}`}/></Link>
