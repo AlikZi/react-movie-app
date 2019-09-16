@@ -9,17 +9,21 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "serve": "live-server public/"
+    "serve": "live-server public/",
+    "test": "jest --watch"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "7",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^3.2.0",
     "dotenv": "^8.1.0",
     "gh-pages": "^2.1.1",
+    "jest": "^24.9.0",
     "node-sass": "^4.12.0",
+    "react-test-renderer": "^16.9.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
@@ -27,7 +31,10 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "@babel/core": "^7.6.0",
+    "babel-jest": "^24.9.0",
     "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "history": "^4.9.0",
     "live-server": "^1.2.1",
