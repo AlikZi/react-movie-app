@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="logo-box container"
+  >
+    <Link
+      to="/"
+    >
+      <img
+        alt="The Movie DB"
+        className="logo-image"
+        src="/images/tmdb.svg"
+      />
+    </Link>
+  </div>
+</div>
+`;
