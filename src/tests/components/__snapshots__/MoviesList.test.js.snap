@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render MoviesList with given movies 1`] = `
+<div>
+  <div
+    className="movie-list"
+  >
+    <MovieCard
+      key="1"
+      movie={
+        Object {
+          "id": 1,
+          "overview": "First lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+          "poster_path": "/1.jpg",
+          "release_date": 1970,
+          "title": "First Movie",
+          "vote_average": 5.5,
+        }
+      }
+    />
+    <MovieCard
+      key="2"
+      movie={
+        Object {
+          "id": 2,
+          "overview": "Second lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+          "poster_path": "/2.jpg",
+          "release_date": 1985,
+          "title": "Second Movie",
+          "vote_aveage": 7.9,
+        }
+      }
+    />
+    <MovieCard
+      key="3"
+      movie={
+        Object {
+          "id": 3,
+          "overview": "Third lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+          "poster_path": "/3.jpg",
+          "release_date": 1982,
+          "title": "Third Movie",
+          "vote_aveage": 7.5,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Should render MoviesList without movies 1`] = `
+<div>
+  <h1>
+    Sorry, we are facing technical issues at the moment. Please, try again later.
+  </h1>
+</div>
+`;

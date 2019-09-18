@@ -11,7 +11,7 @@ export default class MovieOverviewPage extends React.Component {
                    videos: [] }
   }
   componentDidMount() {
-    // When compnent mounts scroll to the top of the page
+    // When component mounts scroll to the top of the page
     window.scrollTo(0, 0);
     const id = this.props.match.params.movieId;
 
@@ -19,15 +19,18 @@ export default class MovieOverviewPage extends React.Component {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
       .then( res => res.json())
       .then( (data) => {
+        console.log(data);
         this.setState({movie:data})})
       .catch(err => 
       console.log(err));
 
-    // Fetch videos(trailers) to the movie from TMDB and set the state
+    // Fetch up to two movie trailers from TMDB and set the state
     fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`)
     .then(res => res.json())
     .then( data => {
-      this.setState({ videos: data.results.slice(0, 2)})
+      // Get only videos with "Trailer" type, save up to two videos in trailers variable
+      const trailers = data.results.filter(video => video.type =="Trailer").slice(0, 2);
+      this.setState({ videos: trailers})
     })
   }
   render() {
@@ -43,19 +46,13 @@ export default class MovieOverviewPage extends React.Component {
           }= this.state.movie;
     
     // Format rate to have one decimal
-    let rate;
-    if (vote_average){
-      rate = vote_average.toFixed(1);
-    }
+    let rate = vote_average ? vote_average.toFixed(1) : 0.0;
 
     // Format release date
     const date = moment(release_date, 'YYYY-MM-DD').format('MMMM D, YYYY');
 
     // Transform the  list of genres into string
-    let genres_names;
-    if(genres){
-      genres_names = genres.map(genre => genre.name).join(', ')
-    }
+    let genres_names = genres ? genres.map(genre => genre.name).join(', ') : [];
 
     // Create divs that contain iframe with trailer and name below the iframe and save in "videos"
     const videos = this.state.videos.map(video =>{
@@ -84,7 +81,7 @@ export default class MovieOverviewPage extends React.Component {
               <div className="poster-title-box__info">
                 <h2 className="poster-title-box__info--title">{title}</h2>
                 <p className='poster-title-box__info--date'>{date}</p>
-                <p className='poster-title-box__info--genres'>Genres: {genres_names}</p>
+                <p className='poster-title-box__info--genres'>{genres_names}</p>
               </div>
               <p className="poster-title-box__rate">{rate}</p>
             </div>

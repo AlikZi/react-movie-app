@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render MovieCard correctly 1`] = `
+<div
+  className="moviecard"
+>
+  <Link
+    to="/movie/1"
+  >
+    <img
+      alt="First Movie"
+      className="moviecard-poster"
+      src="https://image.tmdb.org/t/p/w500/1.jpg"
+    />
+  </Link>
+  <div
+    className="moviecard-info"
+  >
+    <div
+      className="moviecard-info-header"
+    >
+      <p
+        className="moviecard-info-header-rate"
+      >
+        5.5
+      </p>
+      <div
+        className="moviecard-info-header-text"
+      >
+        <h3
+          className="moviecard-info-header-text-title"
+        >
+          First Movie
+        </h3>
+        <p
+          className="moviecard-info-header-text-date"
+        >
+          January 1, 1970
+        </p>
+      </div>
+    </div>
+    <p
+      className="moviecard-info-overview"
+    >
+      First lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+    </p>
+    <Link
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+      to="/movie/1"
+    >
+      <p
+        className="moviecard-info-link"
+      >
+        More Info
+      </p>
+    </Link>
+  </div>
+</div>
+`;
