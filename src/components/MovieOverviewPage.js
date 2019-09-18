@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
 import moment from 'moment';
-import { API_KEY, URL_IMAGE, URL_BACKDROP } from '../api_source';
+import { URL_IMAGE, URL_BACKDROP } from '../api_source';
 import { getMovieInfo } from '../api_requests/getMovieInfo';
 import { getMovieTrailers } from '../api_requests/getMovieTrailers';
 
@@ -60,8 +61,14 @@ export default class MovieOverviewPage extends React.Component {
       );
     });
 
-    return (
+    return ( 
       <div>
+        { 
+          // Check if state has movie object is empty, if it is --> show message, otherwise render page
+          _.isEmpty(this.state.movie) ? (
+          <h1>Sorry, something is wrong. Please, try again later.</h1>
+        ) : (
+        <div>
         <Link className="back-link" to={`/`}>
           <img alt="Back Button" className="back-link__button" src="/images/left-arrow.svg"/>
         </Link>
@@ -79,17 +86,17 @@ export default class MovieOverviewPage extends React.Component {
               </div>
               <p className="poster-title-box__rate">{rate}</p>
             </div>
-            
             <div className="overview-text">
                 <h3>Overview</h3>
                 <p>{overview}</p>
             </div>
-            <h3 className="videos-header">Trailers</h3>
             <div className="movie-videos">
                 {videos}
             </div>
           </div>
         </div>
+        </div>
+        )}
       </div>
     );
   }

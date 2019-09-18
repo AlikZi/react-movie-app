@@ -1,3 +1,210 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render MovieCard correctly 1`] = `undefined`;
+exports[`Should render MovieOverviewPage with movie info and videos correctly 1`] = `
+<div>
+  <div>
+    <Link
+      className="back-link"
+      to="/"
+    >
+      <img
+        alt="Back Button"
+        className="back-link__button"
+        src="/images/left-arrow.svg"
+      />
+    </Link>
+    <div
+      className="backdrop"
+    >
+      <img
+        alt="The Best Movie"
+        className="backdrop__image"
+        src="https://image.tmdb.org/t/p/w1280/backdrop-1.jpg"
+      />
+    </div>
+    <div
+      className="overview"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="poster-title-box"
+        >
+          <img
+            alt="The Best Movie"
+            className="poster-title-box__poster"
+            src="https://image.tmdb.org/t/p/w500/poster-1.jpg"
+          />
+          <div
+            className="poster-title-box__info"
+          >
+            <h2
+              className="poster-title-box__info--title"
+            >
+              The Best Movie
+            </h2>
+            <p
+              className="poster-title-box__info--date"
+            >
+              January 1, 1970
+            </p>
+            <p
+              className="poster-title-box__info--genres"
+            >
+              Action, Drama
+            </p>
+          </div>
+          <p
+            className="poster-title-box__rate"
+          >
+            5.5
+          </p>
+        </div>
+        <div
+          className="overview-text"
+        >
+          <h3>
+            Overview
+          </h3>
+          <p>
+            First lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          </p>
+        </div>
+        <div
+          className="movie-videos"
+        >
+          <div
+            className="movie-videos__item"
+            key="111111"
+          >
+            <div
+              className="video-container"
+            >
+              <iframe
+                allowFullScreen={true}
+                frameBorder="0"
+                height="180"
+                key="111111"
+                src="https://www.youtube.com/embed/111111"
+                width="320"
+              />
+            </div>
+            <p
+              className="movie-videos__item--name"
+            />
+          </div>
+          <div
+            className="movie-videos__item"
+            key="222222"
+          >
+            <div
+              className="video-container"
+            >
+              <iframe
+                allowFullScreen={true}
+                frameBorder="0"
+                height="180"
+                key="222222"
+                src="https://www.youtube.com/embed/222222"
+                width="320"
+              />
+            </div>
+            <p
+              className="movie-videos__item--name"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should render MovieOverviewPage with movie info correctly and without videos correctly 1`] = `
+<div>
+  <div>
+    <Link
+      className="back-link"
+      to="/"
+    >
+      <img
+        alt="Back Button"
+        className="back-link__button"
+        src="/images/left-arrow.svg"
+      />
+    </Link>
+    <div
+      className="backdrop"
+    >
+      <img
+        alt="The Best Movie"
+        className="backdrop__image"
+        src="https://image.tmdb.org/t/p/w1280/backdrop-1.jpg"
+      />
+    </div>
+    <div
+      className="overview"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="poster-title-box"
+        >
+          <img
+            alt="The Best Movie"
+            className="poster-title-box__poster"
+            src="https://image.tmdb.org/t/p/w500/poster-1.jpg"
+          />
+          <div
+            className="poster-title-box__info"
+          >
+            <h2
+              className="poster-title-box__info--title"
+            >
+              The Best Movie
+            </h2>
+            <p
+              className="poster-title-box__info--date"
+            >
+              January 1, 1970
+            </p>
+            <p
+              className="poster-title-box__info--genres"
+            >
+              Action, Drama
+            </p>
+          </div>
+          <p
+            className="poster-title-box__rate"
+          >
+            5.5
+          </p>
+        </div>
+        <div
+          className="overview-text"
+        >
+          <h3>
+            Overview
+          </h3>
+          <p>
+            First lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+          </p>
+        </div>
+        <div
+          className="movie-videos"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should render MovieOverviewPage without movie info correctly 1`] = `
+<div>
+  <h1>
+    Sorry, something is wrong. Please, try again later.
+  </h1>
+</div>
+`;
