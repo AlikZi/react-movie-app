@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import { API_KEY, URL_IMAGE, URL_BACKDROP } from '../api_source';
+import { getMovieInfo } from '../api_requests/getMovieInfo';
+import { getMovieTrailers } from '../api_requests/getMovieTrailers';
 
 
 export default class MovieOverviewPage extends React.Component {
@@ -16,23 +18,15 @@ export default class MovieOverviewPage extends React.Component {
     const id = this.props.match.params.movieId;
 
     // Fetch details about the movie from TMDB and set the state
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
-      .then( res => res.json())
-      .then( (data) => {
-        console.log(data);
-        this.setState({movie:data})})
-      .catch(err => 
-      console.log(err));
-
-    // Fetch up to two movie trailers from TMDB and set the state
-    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`)
-    .then(res => res.json())
-    .then( data => {
-      // Get only videos with "Trailer" type, save up to two videos in trailers variable
-      const trailers = data.results.filter(video => video.type =="Trailer").slice(0, 2);
-      this.setState({ videos: trailers})
+    getMovieInfo(id).then( data => {
+      this.setState({movie: data});
     })
+    // Fetch up to two movie trailers from TMDB and set the state
+    getMovieTrailers(id).then( data => {
+      this.setState({videos: data});
+    })   
   }
+
   render() {
     // Destructure movie for 
     const { 
