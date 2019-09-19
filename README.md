@@ -50,9 +50,14 @@ Now, you are serving the app from your computer.
 
 To run tests:
 ```sh
-npm run test
+$ npm run test
 ```
+
+## Future implementations
+
+It is generally not considered a good practice to keep your API key in the Github. A better practice would be to set it as an environment variable and have your server read it out of the environment. If this were a production project, I would definitely set it as an environment variable.
+
 
 ## License
 
-[MIT](License.md)
+[MIT](License.md) Alex Zonis
