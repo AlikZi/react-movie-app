@@ -38,7 +38,7 @@ export default class MovieOverviewPage extends React.Component {
       poster_path,
       vote_average,
       genres
-          }= this.state.movie;
+          } = this.state.movie;
     
     // Format rate to have one decimal
     let rate = vote_average ? vote_average.toFixed(1) : 0.0;

@@ -4,4 +4,6 @@ import { API_KEY } from '../api_source';
 export function getMovieInfo(id){
     return fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
     .then( res => res.json())
+    .catch(err => 
+        console.log(err));
 }
